@@ -2,7 +2,7 @@
 
 Pricing- und Business-Case-Tool (HTML/CSS/JavaScript, keine Build-Schritte) zum Berechnen, Vergleichen und Hochrechnen von WCP-Lizenzmodellen auf Märkte.
 
-**Start:** `index.html` im Browser öffnen. Chart.js, SheetJS (Excel) und jsPDF werden von CDNs geladen. Alle Eingaben werden automatisch im `localStorage` des Browsers gespeichert und lassen sich als JSON exportieren/importieren.
+**Start:** `index.html` im Browser öffnen (Doppelklick). Die App ist eine einzige, eigenständige Datei – CSS und JavaScript sind eingebettet, sie kann also auch allein heruntergeladen oder weitergegeben werden. Chart.js, SheetJS (Excel) und jsPDF werden von CDNs geladen. Alle Eingaben werden automatisch im `localStorage` des Browsers gespeichert und lassen sich als JSON exportieren/importieren.
 
 ## Seiten
 
@@ -30,6 +30,6 @@ Erweitert: Tier (Small/Medium/Enterprise), Consumption (Logins, Sessions, API Ca
 - Empfehlung: Score = 35 % Umsatz · 20 % Robustheit (Worst/Best) · 15 % Break-Even · 15 % Fairness (Streuung Umsatz/User über Märkte) · 15 % Einfachheit.
 - Optimizer: Modelle sind linear in ihren Preisen, daher exakte Lösung je Hebel bzw. proportionaler Faktor.
 
-Die Rechen-Engine (`js/calc.js`) hat keine DOM-Abhängigkeit und kann in Node genutzt werden (`require('./js/calc.js')`).
+Die Rechen-Engine (erster `<script>`-Block, `window.WCP`) ist vom UI getrennt und hat keine DOM-Abhängigkeit.
 
-CI-Farben sind als CSS-Variablen in `css/styles.css` (`--ci-*`) zentral anpassbar.
+CI-Farben sind als CSS-Variablen im `<style>`-Block von `index.html` (`--ci-*`) zentral anpassbar.
