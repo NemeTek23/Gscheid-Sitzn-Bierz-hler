@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WCP License Calculator</title>
+<meta name="description" content="WCP License Calculator & Market Forecast – Lizenzmodelle berechnen, vergleichen und auf Märkte hochrechnen.">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+
+<header class="app-header">
+  <button class="menu-toggle" id="menuToggle" aria-label="Navigation öffnen">☰</button>
+  <div class="brand">
+    <div class="brand-mark">WCP</div>
+    <div>
+      <div class="brand-title">WCP License Calculator &amp; Market Forecast</div>
+      <div class="brand-sub">Pricing &amp; Business Case</div>
+    </div>
+  </div>
+  <div class="header-spacer"></div>
+  <div class="header-meta" id="headerMeta"></div>
+  <button class="btn small" id="btnReset" title="Alle Eingaben auf Standardwerte zurücksetzen">Zurücksetzen</button>
+</header>
+
+<aside class="sidebar" id="sidebar">
+  <div class="nav-label">Navigation</div>
+  <nav class="nav" id="nav">
+    <a href="#markets" data-page="markets"><span class="num">1</span>Märkte</a>
+    <a href="#models" data-page="models"><span class="num">2</span>Lizenzmodelle</a>
+    <a href="#catalog" data-page="catalog"><span class="num">3</span>Preiskatalog</a>
+    <a href="#forecast" data-page="forecast"><span class="num">4</span>Forecast</a>
+    <a href="#scenarios" data-page="scenarios"><span class="num">5</span>Szenarien</a>
+    <a href="#management" data-page="management"><span class="num">6</span>Management Dashboard</a>
+    <a href="#export" data-page="export"><span class="num">7</span>Export</a>
+  </nav>
+  <div class="nav-label" style="margin-top:12px">Bonus</div>
+  <nav class="nav">
+    <a href="#optimizer" data-page="optimizer"><span class="num">★</span>Pricing Optimizer</a>
+  </nav>
+  <div class="sidebar-foot">
+    Eingaben werden automatisch lokal im Browser gespeichert.
+  </div>
+</aside>
+
+<main class="main">
+  <section class="page" id="page-markets"></section>
+  <section class="page" id="page-models"></section>
+  <section class="page" id="page-catalog"></section>
+  <section class="page" id="page-forecast"></section>
+  <section class="page" id="page-scenarios"></section>
+  <section class="page" id="page-management"></section>
+  <section class="page" id="page-export"></section>
+  <section class="page" id="page-optimizer"></section>
+</main>
+
+<div class="toast" id="toast"></div>
+<input type="file" id="fileImport" accept="application/json,.json" hidden>
+
+<script src="js/calc.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
